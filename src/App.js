@@ -9,11 +9,17 @@ import {
 } from "react-router-dom";
 import styled from 'styled-components';
 import AddWordPage from './pages/AddWordPage';
-import LoginPage from './pages/loginPage';
+import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import Homepage from './pages/homepage';
+import Topbar from './component/topBar';
+import MainPage from './pages/mainPage';
+import bg from './assets/castle.jpg';
 
 const StyledWrapper = styled.div`
+/* background-image: url('${bg}');
+background-repeat: no-repeat;
+background-size: cover; */
 `
 
 
@@ -21,7 +27,8 @@ function App() {
   return (
     <div className="App">
       <StyledWrapper>
-        <div>
+
+        {/* <div>
           <div>
             <Link to="/">Home</Link>
           </div>
@@ -40,19 +47,16 @@ function App() {
           <div>
             <Link to="/RegisterPage">RegisterPage</Link>
           </div>
-        </div>
+        </div> */}
         <Switch>
-          <Route path="/AddWordPage">
-            <AddWordPage />
+          <Route path="/RegisterPage">
+            <RegisterPage />
           </Route>
           <Route path="/LoginPage">
             <LoginPage />
           </Route>
-          <Route path="/RegisterPage">
-            <RegisterPage />
-          </Route>
-          <Route path="/">
-            <Homepage />
+          <Route path='/'>
+            <MainPage />
           </Route>
         </Switch>
       </StyledWrapper>

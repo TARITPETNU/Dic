@@ -9,12 +9,16 @@ import reportWebVitals from './reportWebVitals';
 import {
   BrowserRouter as Router
 } from "react-router-dom";
+import { AppProvider } from './context/AppContext';
+import './firebase';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router>
-      <App />
-    </Router>
+    <AppProvider>
+      <Router>
+        <App />
+      </Router>
+    </AppProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
